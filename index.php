@@ -15,6 +15,6 @@ include 'includes/header.php';
     <div class="login-prompt">
         <p>Please <a href="login.php">login</a> or <a href="register.php">register</a> to join clubs.</p>
     </div>
-<?php endif; ?>
+<?php endif; ?> 
 
 <?php include 'includes/footer.php'; ?>
