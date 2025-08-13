@@ -25,17 +25,18 @@ if ($check_result->num_rows > 0) {
     $club = $club_result->fetch_assoc();
     
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // Join the club
-        $join_date = date('Y-m-d');
-        $insert_sql = "INSERT INTO memberships (student_id, club_id, join_date) 
-                       VALUES ('$student_id', '$club_id', '$join_date')";
-        
-        if ($conn->query($insert_sql) {
-            $message = "You have successfully joined " . htmlspecialchars($club['name']) . "!";
-        } else {
-            $message = "Error joining club: " . $conn->error;
-        }
+    // Join the club
+    $join_date = date('Y-m-d');
+    $insert_sql = "INSERT INTO memberships (student_id, club_id, join_date) 
+                   VALUES ('$student_id', '$club_id', '$join_date')";
+    
+    if ($conn->query($insert_sql)) {
+        $message = "You have successfully joined " . htmlspecialchars($club['name']) . "!";
+    } else {
+        $message = "Error joining club: " . $conn->error;
     }
+}
+
 }
 ?>
 
